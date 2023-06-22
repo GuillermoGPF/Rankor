@@ -1,0 +1,12 @@
+services:
+  - name: backend
+    region: us-west
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromDatabase:
+          name: my-mongodb-database
+          property: connectionString
