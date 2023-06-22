@@ -17,7 +17,6 @@ const projectName = 'Rankor'
 app.locals.title = 'Rankor: The Gamers Ranking Social Network'
 
 require('./routes')(app)
-
 require('./error-handling')(app)
 
 module.exports = app
