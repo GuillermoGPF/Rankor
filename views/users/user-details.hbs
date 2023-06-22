@@ -1,0 +1,78 @@
+<video class="video" src="/images/video.mp4" autoplay muted loop></video>
+<div class="container">
+    <div class="profile-card">
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="/" class="back">
+                <i class="fas fa-chevron-left"></i>
+                Volver
+            </a>
+            {{#if connect}}
+            <a href="/user/{{_id}}/edit" class="edit">
+                <i class="far fa-edit"></i>
+            </a>
+            {{/if}}
+        </div>
+        <div class="profile-name">
+            <h2>{{username}}</h2>
+            <div class="profile-photo">
+                <img src="{{avatar}}">
+            </div>
+            <form class="stars">
+                <p class="valoracion">
+                    <input id="radio1" type="radio" name="estrellas" value="5">
+                    <label for="radio1">★</label>
+                    <input id="radio2" type="radio" name="estrellas" value="4">
+                    <label for="radio2">★</label>
+                    <input id="radio3" type="radio" name="estrellas" value="3">
+                    <label for="radio3">★</label>
+                    <input id="radio4" type="radio" name="estrellas" value="2">
+                    <label for="radio4">★</label>
+                    <input id="radio5" type="radio" name="estrellas" value="1">
+                    <label for="radio5">★</label>
+                </p>
+                <input hidden readonly id="hiddenStar" value='{{id}}'>
+            </form>
+        </div>
+        <div>
+            <h4>Sobre mí</h4>
+            <p>
+                {{description}}
+            </p>
+        </div>
+        <div>
+            <h4>Skills</h4>
+            <p>
+                {{skills}}
+            </p>
+        </div>
+        <div>
+            <h4>Mis juegos</h4>
+            <div class="row my-5">
+                <p>
+                    {{playedGames}}
+                </p>
+                {{#each playedGames}}
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="/search/{{id}}">
+                        <div class="card game-card">
+                            <img src="{{background_image}}" alt="{{background_image}}">
+                            <div class="footer-game-card">
+                                <p>{{name}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div>
+            <h4>Amigos</h4>
+            <p>
+                {{friends}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/dynamic-rating.js"></script>

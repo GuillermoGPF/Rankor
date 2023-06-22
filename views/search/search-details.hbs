@@ -1,0 +1,49 @@
+<div class="hero">
+    <img src="{{background_image}}" alt="{{background_image}}" class="bg-game">
+    <div class="container">
+        <div class="profile-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/" class="back">
+                    <i class="fas fa-chevron-left"></i>
+                    Volver
+                </a>
+                {{!-- {{#if connect}} --}}
+                <a href="/user/add-game/{{id}}" class="btn">
+                    <i class="fas fa-star"></i>
+                    Guardar juego
+                </a>
+                {{!-- {{/if}} --}}
+            </div>
+            <div class="profile-name">
+                <h2>{{name}}</h2>
+                <div class="profile-photo">
+                    <img src="{{background_image_additional}}">
+                </div>
+            </div>
+            <div>
+                <h4>Descripción</h4>
+                <p>
+                    {{{description}}}
+                </p>
+            </div>
+            <div>
+                <h4>Género</h4>
+                <p>
+                    {{genres.[0].name}}
+                </p>
+            </div>
+            <div>
+                <h4>Rating</h4>
+                <p>
+                    {{rating}}
+                </p>
+            </div>
+            <div>
+                <h4>Developers</h4>
+                <p>
+                    {{developers.[0].name}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
